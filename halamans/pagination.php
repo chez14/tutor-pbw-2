@@ -3,9 +3,6 @@
 <a href="halaman-c.php">Hal. C</a> 
 <br>
 <a href="?clear=true">Clear Session</a>
-<pre>
-<?php var_dump($_SESSION['histori']); ?>
-</pre>
 
 <?php 
     if(!isset($_SESSION['was_back']) || (isset($_SESSION['was_back']) && !$_SESSION['was_back'])) {
@@ -13,6 +10,9 @@
             "name"=> $halaman,
             "url" => $_SERVER['REQUEST_URI']
         ]);
-        $_SESSION['was_back'] = null;
     }
+    unset($_SESSION['was_back']);
 ?>
+<pre>
+<?php var_dump($_SESSION['histori']); ?>
+</pre>

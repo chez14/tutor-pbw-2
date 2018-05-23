@@ -21,4 +21,5 @@ function push($data) {
 
 if(isset($_GET['back'])) {
     go_back();
+    die();
 }
